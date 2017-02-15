@@ -1,5 +1,4 @@
 import UIKit
-import QuartzCore
 
 struct MovieInfo {
     var movieID: Int!
