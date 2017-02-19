@@ -67,7 +67,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 	// MARK: - Load Image
 	
-	func startIconDownload(withMovieInfo movie: MovieInfo, forIndexPath indexPath: IndexPath) {
+	func downloadIcon(withMovieInfo movie: MovieInfo, forIndexPath indexPath: IndexPath) {
 		let sessionConfiguration = URLSessionConfiguration.default
 		sessionConfiguration.requestCachePolicy = .reloadIgnoringLocalCacheData
 		let session = URLSession(configuration: sessionConfiguration)
@@ -114,7 +114,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		cell.imageView?.contentMode = .scaleAspectFit
 		
 		if self.downloadMovieIcons[currentMovie.title] == nil {
-			startIconDownload(withMovieInfo: currentMovie, forIndexPath: indexPath)
+			downloadIcon(withMovieInfo: currentMovie, forIndexPath: indexPath)
 			cell.imageView?.image = UIImage(named: "movie_default")
 		}
 		else {
